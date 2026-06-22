@@ -19,6 +19,11 @@
 #         print("Hex is not valid")
 #
 
-hex_string = "ffffff"
+
+def hex_parser(hexColor: str):
+    pass
+
+
+hex_string = "#ffffff"
 result = int(hex_string, 16)
 print(result)
