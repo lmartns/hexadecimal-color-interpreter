@@ -1,29 +1,22 @@
-# 1 - read a enter
-# 2 - valid enter
-# 3 - parse hex > rgb
-# 4 - print color in terminal
+def scanner(text: str) -> str:
+    return input(text)
 
 
-# import re
-#
-#
-# def scanner(text: str) -> str:
-#     return input(text)
-#
-#
-# def hex_valid(regex: str):
-#     match = re.search(regex, scanner("Text your hex color: "))
-#     if match:
-#         print("Hex is valid")
-#     else:
-#         print("Hex is not valid")
-#
+def hex_parser(hexColor: str) -> tuple[int, int, int]:
+    hexColor = hexColor[1:7]
+    p1, p2, p3 = hexColor[:2], hexColor[2:4], hexColor[4:]
+    hex1 = int(p1, 16)
+    hex2 = int(p2, 16)
+    hex3 = int(p3, 16)
+    return hex1, hex2, hex3
+
+def hex_color_interpreter():
+    hex_color = scanner("Enter your hex color: 0_0 ")
+    r, g, b = hex_parser(hex_color)
+    print(f"\033[38;2;{r};{g};{b}mYour color :)\033[0m")
+
+hex_color_interpreter()
 
 
-def hex_parser(hexColor: str):
-    pass
 
 
-hex_string = "#ffffff"
-result = int(hex_string, 16)
-print(result)
